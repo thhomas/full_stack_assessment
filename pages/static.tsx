@@ -1,10 +1,9 @@
-import Head from "next/head"
 import { GetStaticPropsResult } from "next"
 import { DrupalNode, DrupalTaxonomyTerm } from "next-drupal"
 
 import { drupal } from "lib/drupal"
 import { Layout } from "components/layout"
-import { NodeDatavizTeaser } from "components/node--dataviz--teaser"
+import { NodeDatavizCard } from "components/node--dataviz--card"
 import { useEffect, useState } from "react"
 
 interface IndexPageProps {
@@ -35,7 +34,7 @@ export default function DatavizPage({ nodes, types }: IndexPageProps) {
             <div key={idx} className="flex flex-col bg-white overflow-hidden">
             {nodeCol.map(node => (
               <div key={node.id}>
-                <NodeDatavizTeaser node={node} />
+                <NodeDatavizCard node={node} />
               </div>
             ))}
             </div>
